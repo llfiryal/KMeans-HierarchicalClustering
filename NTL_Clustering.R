@@ -136,7 +136,7 @@ for (yr in unique_years) {
 # Save brightness data
 write.csv(brightness_ranges, "/STDM - NTL/Cluster_Brightness_Ranges.csv", row.names = FALSE) #Adjust the file path to your local dataset in this line
 
-cat("\n✅ K-Means & Hierarchical Clustering (k=5) using 2012 Benchmark with brightness range tracking complete.\n")
+cat("\n K-Means & Hierarchical Clustering (k=5) using 2012 Benchmark with brightness range tracking complete.\n")
 
 # ===========================================
 # 4. SILHOUETTE ANALYSIS (2012 Benchmark)
@@ -145,7 +145,7 @@ cat("\n✅ K-Means & Hierarchical Clustering (k=5) using 2012 Benchmark with bri
 # K-Means Silhouette
 silhouette_kmeans <- silhouette(kmeans_result_2012$cluster, dist(df_scaled_2012))
 avg_silhouette_kmeans <- mean(silhouette_kmeans[, 3])
-cat("\n✅ Average Silhouette Score for K-Means Clustering (2012):", round(avg_silhouette_kmeans, 4), "\n")
+cat("\n Average Silhouette Score for K-Means Clustering (2012):", round(avg_silhouette_kmeans, 4), "\n")
 write.csv(as.data.frame(silhouette_kmeans), 
           "/STDM - NTL/KMeans_Silhouette_2012.csv", #Adjust the file path to your local dataset in this line
           row.names = FALSE)
@@ -153,7 +153,7 @@ write.csv(as.data.frame(silhouette_kmeans),
 # Hierarchical Silhouette
 silhouette_hierarchical <- silhouette(df_2012$Hierarchical_Cluster, dist(df_scaled_2012))
 avg_silhouette_hierarchical <- mean(silhouette_hierarchical[, 3])
-cat("\n✅ Average Silhouette Score for Hierarchical Clustering (2012):", round(avg_silhouette_hierarchical, 4), "\n")
+cat("\n Average Silhouette Score for Hierarchical Clustering (2012):", round(avg_silhouette_hierarchical, 4), "\n")
 write.csv(as.data.frame(silhouette_hierarchical), 
           "/STDM - NTL/Hierarchical_Silhouette_2012.csv", #Adjust the file path to your local dataset in this line
           row.names = FALSE)
@@ -182,4 +182,4 @@ write.csv(cluster_distribution,
           "/STDM - NTL/Cluster_Distribution_Per_Year.csv", #Adjust the file path to your local dataset in this line
           row.names = FALSE)
 
-cat("\n✅ Cluster distribution summary saved.\n")
+cat("\n Cluster distribution summary saved.\n")
